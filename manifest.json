@@ -1,0 +1,42 @@
+{
+    "manifest_version": 2,
+        "name": "SFCC BM Power-up Packs",
+    "version": "1.1.1",
+    "description": "SFCC BM Power-up Packs",
+    "icons":
+    {
+        "16": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
+    },
+    "background":
+    {
+        "scripts": ["background.js"]
+    },
+    "browser_action": 
+    {
+        "default_icon": "logo.png",
+        "default_title": "SFCC BM Power-up Packs",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": 
+    [
+        {
+            "matches": ["https://*.demandware.net/on/demandware.store/Sites-Site/*"],
+            "js": ["contentScript.js"],
+            "css": ["custom.css"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions":
+    [
+        "http://*/*",
+        "https://*/*",
+        "tabs",
+        "storage"
+    ],
+    "web_accessible_resources": ["js/inject.js"],
+    "homepage_url": "https://confluence.e-loreal.com/display/EP/Utility+Chrome+Extension",
+    "omnibox": { "keyword" : "sfcc" },
+    "default_locale": "en_US"
+}

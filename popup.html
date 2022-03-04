@@ -1,0 +1,372 @@
+<head>
+    <style>
+        .theme_colors {
+            color: #232126;
+            color: #88AABF;
+            color: #BF9775;
+            color: #F2E3D5;
+            color: #735C4F;
+        }
+
+        * {
+            font-family: Century;
+        }
+
+        html {
+            height: 320px;
+        }
+
+        body {
+            /* background-image: linear-gradient(-90deg, #36171F, #1E2F57); */
+            color: #735C4F;
+            margin: 0;
+            font-size: 12px;
+            /* font-family: Calibri, serif; */
+            /* height: 100%; */
+        }
+
+        .popup_message {
+            width: 400px;
+            /* height: 100%; */
+        }
+
+        .shortcut {
+            font-weight: bold;
+            display: block;
+            padding: 4px;
+            color: #FFF;
+        }
+
+        #tabs {
+            /* background-image: linear-gradient(-60deg,#def, #bdf ); */
+            background-color: #F2E3D5;
+        }
+
+        #tabs .tab {
+            width: 100%;
+            padding: 0;
+            /* height: 100%; */
+        }
+
+        #tabs .tab-title {
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #232126;
+        }
+
+        .instance-title {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #735C4F;
+        }
+
+        .instances {
+            margin: 10px 0;
+        }
+
+        .instance {
+            display: inline-block;
+            width: 60px;
+            height: 20px;
+            border: 1px solid #BF9775;
+            margin: 2px;
+        }
+
+        .productions .instance {
+            border-left: 4px solid #A00;
+        }
+
+        .instance span:hover {
+            animation-duration: 0.5s;
+            animation-timing-function: ease;
+            color: white;
+            height: 21px;
+        }
+
+        .instance span a:hover {
+            color: white;
+        }
+
+        .productions .instance span:hover {
+            background-image: linear-gradient(-90deg, #F00, #A00);
+        }
+
+        .stagings .instance span:hover {
+            background-image: linear-gradient(-90deg, #00F, #00A);
+        }
+
+        .developments .instance span:hover {
+            background-image: linear-gradient(-90deg, #0F0, #0A0);
+        }
+
+
+        .stagings .instance {
+            border-left: 4px solid #00A;
+        }
+
+        .developments .instance {
+            border-left: 4px solid #0A0;
+        }
+
+        .pig {
+            margin: 3% auto;
+            margin-top: 14px;
+            width: 94%;
+            border: 1px solid #BF9775;
+            text-align: center;
+        }
+
+        .pig span {
+            text-align: center;
+            font-size: 12px;
+            display: block;
+            cursor: pointer;
+            color: #735C4F;
+            line-height: 20px;
+            background-color: #F2E3D5;
+        }
+
+        .pig span a {
+            color: #735C4F;
+        }
+
+        .productions {
+            border-left: 8px solid #A00;
+        }
+
+        .stagings {
+            border-left: 8px solid #00A;
+        }
+
+        .developments {
+            border-left: 8px solid #0A0;
+        }
+
+        .instance a {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="libs/jquery-ui.min.css">
+    <script src="libs/jquery-3.6.0.min.js"></script>
+    <script src="libs/jquery-ui.min.js"></script>
+    <script src="libs/totp.min.js"></script>
+    <script src="popup.js"></script>
+</head>
+
+<body>
+    <div class="popup_message">
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Realms</a></li>
+                <li><a href="#tabs-2">Account</a></li>
+                <li><a href="#tabs-3">About</a></li>
+            </ul>
+            <div id="tabs-1" class="tab">
+                <!-- <div class="tab-title">BM Shortcuts</div> -->
+
+                <div class="productions pig">
+                    <div class="instance-title">Production Instances</div>
+                    <div class="instances">
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://production-apac-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    APAC
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://production-jp-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    JAPAN
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://production-cn-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    CHINA
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://production-ap12-lorealsa.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    ANZSEA
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://production-eu11-lorealsa.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    MENA
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stagings pig">
+                    <div class="instance-title">Staging Instances</div>
+                    <div class="instances">
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://staging-apac-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    APAC
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://staging-jp-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    JAPAN
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://staging-cn-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    CHINA
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://staging-ap12-lorealsa.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    ANZSEA
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://staging-eu11-lorealsa.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    MENA
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="developments pig">
+                    <div class="instance-title">Development Instances</div>
+                    <div class="instances">
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://development-apac-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    APAC
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://development-jp-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    JAPAN
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://development-cn-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    CHINA
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://development-ap12-lorealsa.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    ANZSEA
+                                </a>
+                            </span>
+                        </div>
+                        <div class="instance">
+                            <span>
+                                <a target="_blank"
+                                    href="https://development-eu11-lorealsa.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+                                    MENA
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tabs-2" class="tab">
+                <div id="secret">
+                    Your key is: <span class="key">[Empty]</span>
+                </div>
+                <input id="input-key" type="text" placeholder="Enter your TOTP secret key here..." />
+                <input id="save-key" type="button" value="Save" />
+                <div>Your one time password value is: <span id="totp-value"></span></div>
+                <div>Expiration time left: <span id="totp-timeleft"></span></div>
+            </div>
+            <div id="tabs-3" class="tab">
+                <h1>You are Powered-up!</h1>
+                <p>Version 2.0.0 - Jan 27, 2022 - Clyde</p>
+                <a class="release_note" target="_blank"
+                    href="https://confluence.e-loreal.com/display/EP/Utility+Chrome+Extension">
+                    Check release note on Confluence page</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="popup_message">
+    <p> APAC Primary Instances </p>
+    <a class="shortcut production" target="_blank"
+        href="https://production-apac-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+        >> PRODUCTION - APAC</a>
+    <a class="shortcut staging" target="_blank"
+        href="https://staging-apac-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >>
+        STAGING - APAC</a>
+    <a class="shortcut development" target="_blank"
+        href="https://development-apac-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM">
+        >> DEVELOPMENT - APAC</a>
+
+    <p> Japan Primary Instances </p>
+    <a class="shortcut production" target="_blank"
+        href="https://production-jp-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >>
+        PRODUCTION - Japan</a>
+    <a class="shortcut staging" target="_blank"
+        href="https://staging-jp-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >>
+        STAGING - Japan</a>
+    <a class="shortcut development" target="_blank"
+        href="https://development-jp-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >>
+        DEVELOPMENT - Japan</a>
+</div>
+
+<script src="popup.js"></script>
+
+-->

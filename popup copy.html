@@ -1,0 +1,58 @@
+<style>
+    body {
+        background-image: linear-gradient(-90deg, #36171F, #1E2F57);
+        color: #fff;
+        margin: 0;
+        font-family: Calibri, serif;
+    }
+
+    .popup_message {
+        width: 300px;
+        height: 300px;
+        padding: 4px;
+    }
+
+    .shortcut {
+        font-weight: bold;
+        display: block;
+        padding: 4px;
+        color: #FFF;
+    }
+
+    .release_note {
+        color: #FFF;
+    }
+
+    .production {
+        background: #A00;
+    }
+
+    .staging {
+        background: #00A;
+    }
+
+    .development {
+        background: #060;
+    }
+</style>
+
+<div class="popup_message">
+    <h1>You are Powered-up!</h1>
+    <p>Version 2.0.0 - Jan 27, 2022 - Clyde</p>
+    <a class="release_note" target="_blank" href="https://confluence.e-loreal.com/display/EP/Utility+Chrome+Extension"> Check release note on Confluence page</a>
+
+    <p> APAC Primary Instances </p>
+    <a class="shortcut production" target="_blank" href="https://production-apac-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >> PRODUCTION - APAC</a>
+    <a class="shortcut staging" target="_blank" href="https://staging-apac-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >> STAGING - APAC</a>
+    <a class="shortcut development" target="_blank" href="https://development-apac-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >> DEVELOPMENT - APAC</a>
+
+    <p> Japan Primary Instances </p>
+    <a class="shortcut production" target="_blank" href="https://production-jp-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >> PRODUCTION - Japan</a>
+    <a class="shortcut staging" target="_blank" href="https://staging-jp-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >> STAGING - Japan</a>
+    <a class="shortcut development" target="_blank" href="https://development-jp-loreal.demandware.net/on/demandware.store/Sites-Site/default/ViewLogin-StartAM"> >> DEVELOPMENT - Japan</a>
+</div>
+
+<script src="popup.js"></script>
+
+<div id="totp-value">111</div>
+<div id="totp-timeleft"></div>
